@@ -2,6 +2,23 @@
 #include <fstream>
 using namespace std;
 
+void check_user(){
+
+} 
+
+void add_user(string user, string pass){
+
+//uses fstream- calls the built in classes 'open' (available for writing) and 'close'
+//writes the username to the text file
+    fstream user_txt;
+    user_txt.open("username.txt", fstream::out | fstream::app);
+
+    user_txt << user << "\n";
+
+    user_txt.close();
+    cout << "Your account has been created";
+}
+
 void has_account(){
     string user;
     string pass;
@@ -34,6 +51,9 @@ void make_account(){
         cout << "Passwords do not match";
         make_account();
     }
+
+//Add user to the user file
+    add_user(user, pass);
 }
 
 int main(){
@@ -54,13 +74,5 @@ int main(){
         main();
     } 
 
-/*
-    fstream user;
-    user.open("username.txt", fstream::out | fstream::app | fstream::in);
-
-    user << "Hello\n";
-
-    user.close();
-*/  
 return 0;
 }
