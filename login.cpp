@@ -49,7 +49,10 @@ int main(){
         has_account();
     } else if (account_yn == 'n'){
         make_account();
-    }
+    } else {
+        cout << "Please enter \"y\" or \"n\" only";
+        main();
+    } 
 
 /*
     fstream user;
