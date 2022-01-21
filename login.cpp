@@ -4,7 +4,7 @@ using namespace std;
 
 void check_user(){
 
-} 
+}
 
 void add_user(string user, string pass){
 
@@ -41,7 +41,7 @@ void make_account(){
 //Password
     cout << "Password: ";
     cin >> pass;
-    cout << "Confirm Passweord: ";
+    cout << "Confirm Password: ";
     cin >> confirm_pass;
 
 //Check if passwords match
