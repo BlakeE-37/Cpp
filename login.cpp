@@ -1,6 +1,8 @@
 #include <iostream>
 #include <fstream>
 using namespace std;
+void has_account();
+void make_account();
 
 //once they type the username and password, run through the username file 
 //to find the matching credentials
@@ -9,19 +11,38 @@ void check_user(string user, string pass){
     fstream user_txt;
     user_txt.open("username.txt", fstream::in);
 
+//compares username and password to file
     string line, concat;
     string insertion(1, ':');
     concat = user + insertion + pass;
     while(getline(user_txt, line)) {
         if (line == concat){
-            cout << "You are logged in.";
+            cout << "\nYou are logged in.\n\n";
+            user_txt.close();
             terminate();
         }
     }
 //If none of the lines in the file match rerun the file
-    cout << "Username or Password is incorrect\n";
+    char confirm;
+    cout << "\nUsername or Password is incorrect\n\n";
+    cout << "Are you sure you have an account? [y/n]: ";
+    cin >> confirm;
+    user_txt.close();
+
+    if (confirm == 'y'){
         has_account();
-        user_txt.close();
+    } else if (confirm == 'n'){
+        char create;
+        cout << "Would you like to create an account? [y/n]: ";
+        cin >> create;
+
+        if (create == 'y'){
+            make_account();
+        } else {
+            terminate();        }
+    }
+        
+        
 }
 
 void add_user(string user, string pass){
