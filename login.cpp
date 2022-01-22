@@ -2,8 +2,26 @@
 #include <fstream>
 using namespace std;
 
-void check_user(){
+//once they type the username and password, run through the username file 
+//to find the matching credentials
+//if no credentials match then have them retype there username and password
+void check_user(string user, string pass){
+    fstream user_txt;
+    user_txt.open("username.txt", fstream::in);
 
+    string line, concat;
+    string insertion(1, ':');
+    concat = user + insertion + pass;
+    while(getline(user_txt, line)) {
+        if (line == concat){
+            cout << "You are logged in.";
+            terminate();
+        }
+    }
+//If none of the lines in the file match rerun the file
+    cout << "Username or Password is incorrect\n";
+        has_account();
+        user_txt.close();
 }
 
 void add_user(string user, string pass){
@@ -13,22 +31,29 @@ void add_user(string user, string pass){
     fstream user_txt;
     user_txt.open("username.txt", fstream::out | fstream::app);
 
-    user_txt << user << "\n";
+//adds the useranme and password to the username file
+    string user_pass;
+    user_pass = user + ':' + pass;
+    user_txt << user_pass << "\n";
 
     user_txt.close();
     cout << "Your account has been created";
 }
-
+//if the user says they have an account, have them type it 
+//and send the username and password to the check function
 void has_account(){
     string user;
     string pass;
     cout << "EXISTING USER\n";
-    cout << "Username: \n";
+    cout << "Username: ";
     cin >> user;
-    cout << "Password: \n";
+    cout << "Password: ";
     cin >> pass;
-}
 
+    check_user(user, pass);
+}
+//if the user does not have an account, have them create one 
+//by typing a username and password and sending it to the add user function
 void make_account(){
     string user;
     string pass;
@@ -52,7 +77,7 @@ void make_account(){
         make_account();
     }
 
-//Add user to the user file
+//Add user to the username file
     add_user(user, pass);
 }
 
