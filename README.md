@@ -1,30 +1,28 @@
 # Overview
+I wrote this prgram to show what I have learned about the c++ language. 
 
-{Important!  Do not say in this section that this is college assignment.  Talk about what you are trying to accomplish as a software engineer to further your learning.}
+I wrote a program that mimics a login page. You cannot actually loggin into anything with this program but it uses functions, some built in classes, varibales and other basic c++ programming. 
 
-{Provide a description the software that you wrote to demonstrate the C++ language.}
-
-{Describe your purpose for writing this software.}
-
-{Provide a link to your YouTube demonstration.  It should be a 4-5 minute demo of the software running and a walkthrough of the code.  Focus should be on sharing what you learned about the language syntax.}
+Here is a link to a video where I show off my program.
 
 [Software Demo Video](http://youtube.link.goes.here)
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
-
-{Describe the programming language that you used and any libraries.}
+* Vscode
+* Github
+* GCC and G++ compiler and debugger
+* fstream to add and read files
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
-* [Web Site Name](http://url.link.goes.here)
-* [Web Site Name](http://url.link.goes.here)
+* [w3schools C++ tutorial](https://www.w3schools.com/cpp/default.asp)
+* [C++ Library's Website](https://www.cplusplus.com/reference/fstream/fstream/)
+* [Mingw and C++ toolset download](https://www.youtube.com/watch?v=0HD0pqVtsmw)
+* [Implement C++ compiler with Vscode](https://www.youtube.com/watch?v=77v-Poud_io&t=310s)
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
-* Item 1
-* Item 2
-* Item 3
+* Add a GUI
+* Put Username and Passwords in a cloud database
+* Make Passwords encrypted
