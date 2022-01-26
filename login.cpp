@@ -40,9 +40,7 @@ void check_user(string user, string pass){
             make_account();
         } else {
             terminate();        }
-    }
-        
-        
+    }        
 }
 
 void add_user(string user, string pass){
@@ -58,14 +56,14 @@ void add_user(string user, string pass){
     user_txt << user_pass << "\n";
 
     user_txt.close();
-    cout << "Your account has been created";
+    cout << "\nYour account has been created\n\n";
 }
 //if the user says they have an account, have them type it 
 //and send the username and password to the check function
 void has_account(){
     string user;
     string pass;
-    cout << "EXISTING USER\n";
+    cout << "\nEXISTING USER\n";
     cout << "Username: ";
     cin >> user;
     cout << "Password: ";
@@ -80,7 +78,7 @@ void make_account(){
     string pass;
     string confirm_pass;
 //Username
-    cout << "NEW USER\n";
+    cout << "\nNEW USER\n";
     cout << "Username: ";
     cin >> user;
 
@@ -92,14 +90,12 @@ void make_account(){
 
 //Check if passwords match
     if (pass == confirm_pass){
-
+//Add user to the username file
+        add_user(user, pass);
     } else if (pass != confirm_pass){
-        cout << "Passwords do not match";
+        cout << "\nPasswords do not match\n\n";
         make_account();
     }
-
-//Add user to the username file
-    add_user(user, pass);
 }
 
 int main(){
